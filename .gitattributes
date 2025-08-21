@@ -1,2 +1,102 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Atividade Parcial M1 - MongoDB Atlas
+Data de conclusão 27 de agosto de 2025 às 23:59
+Instruções
+Para realizar esta atividade, basta seguir o passo-a-passo descrito e colocar os prints da tela mostrando que conseguiu realizar cada etapa (Os prints deverão ser realizados onde escrito: PRINT DESTA PARTE).
+
+O desafio desta atividade é conseguir realizar o passo-a-passo com, no máximo, apoio da documentação, como ocorre num ambiente profissional.
+
+Passo a Passo da Atividade
+1. Preparação: Criando o Banco de Dados e a Coleção
+Primeiro, vamos criar o "local" onde nossos livros serão guardados.
+
+Conecte-se ao seu cluster do Atlas usando o Compass.
+
+Na tela principal, ao lado do título "Databases", clique no ícone de + (Create Database).
+
+No campo Database Name, digite minha_biblioteca.
+
+No campo Collection Name, digite livros.
+
+Clique em Create Database.
+
+PRINT DESTA PARTE
+
+2. CREATE (Criar): Inserindo Livros na Coleção
+Agora vamos adicionar (CREATE) nossos primeiros livros.
+
+Na lista de bancos de dados à esquerda, clique em minha_biblioteca e depois na coleção livros.
+
+Clique no botão verde ADD DATA e selecione a opção Insert Document.
+
+Uma janela aparecerá. Copie e cole o seguinte documento de livro e depois clique em Insert:
+
+JSON
+{   "titulo": "O Hobbit",   "autor": "J.R.R. Tolkien",   "ano_publicacao": 1937,   "generos": ["Fantasia", "Aventura"],   "lido": true }
+
+JSON
+{   "titulo": "Fahrenheit 451",   "autor": "Ray Bradbury",   "ano_publicacao": 1953,   "generos": ["Ficção Científica", "Distopia"],   "lido": false }
+PRINT DESTA PARTE
+3. READ (Ler): Consultando seus Livros
+Vamos encontrar (READ) os livros que acabamos de adicionar usando filtros.
+
+Encontrar um livro específico:
+
+Na barra Filter, que fica acima da lista de documentos, digite a seguinte consulta para encontrar apenas "O Hobbit":
+
+JSON
+{ "titulo": "O Hobbit" }
+Clique no botão Find. Apenas o documento do Hobbit será exibido.
+
+Encontrar livros de um gênero:
+
+Clique em Reset para limpar o filtro anterior.
+
+Agora, vamos buscar todos os livros que pertencem ao gênero "Distopia". No campo Filter, digite:
+
+JSON
+{ "generos": "Distopia" }
+Clique em Find. Apenas "Fahrenheit 451" aparecerá.
+
+PRINT DESTA PARTE
+4. UPDATE (Atualizar): Modificando um Livro
+Imagine que você acabou de ler "Fahrenheit 451". Precisamos atualizar (UPDATE) seu status.
+
+Primeiro, encontre o livro usando o filtro: { "titulo": "Fahrenheit 451" }.
+
+Com o documento à mostra, passe o mouse sobre ele e clique no ícone de lápis (Edit Document).
+
+Na janela de edição, encontre o campo "lido": false. Clique em false e mude para true.
+
+Vamos também adicionar um novo campo. No final do documento, clique em Add field after... e adicione um campo chamado nota com o valor numérico 9.
+
+O documento agora deve parecer com isto:
+
+JSON
+{   "_id": ObjectId("..."),   "titulo": "Fahrenheit 451",   "autor": "Ray Bradbury",   "ano_publicacao": 1953,   "generos": ["Ficção Científica", "Distopia"],   "lido": true,   "nota": 9 }
+Clique no botão verde Update para salvar as alterações.
+
+PRINT DESTA PARTE
+5. DELETE (Deletar): Removendo um Livro
+Para praticar a remoção, vamos adicionar um livro temporário e depois deletá-lo (DELETE).
+
+Primeiro, insira este documento simples: { "titulo": "Livro Temporário" }.
+
+Agora, use o filtro para encontrá-lo: { "titulo": "Livro Temporário" }.
+
+Passe o mouse sobre o documento e clique no ícone de lixeira (Delete Document).
+
+Uma janela de confirmação aparecerá para garantir que você não apague algo por engano. Digite o nome da coleção (livros) no campo de texto para confirmar.
+
+Clique no botão vermelho Delete.
+
+PRINT DESTA PARTE
+Meu trabalho
+
+Anexo
+Carregar deste dispositivo
+Nenhum arquivo escolhido
+Novo
+Pontos
+2,5 pontos possíveis
